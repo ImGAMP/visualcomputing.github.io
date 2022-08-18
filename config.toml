@@ -1,6 +1,6 @@
-baseURL = "https://visualcomputing.github.io/showcase"
+baseURL = "https:/imgamp.github.io/visualcomputing.showcase"
 languageCode = "en-us"
-title = "Showcase Template"
+title = "Visual Computing"
 theme = 'book'
 
 # Book configuration
@@ -22,12 +22,12 @@ enableGitInfo = true
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo = 'https://github.com/visualcomputing/showcase'
+  BookRepo = 'https://github.com/ImGAMP/visualcomputing.showcase'
 
   # Configure the date format used on the pages
   # - In git information
   # - In blog posts
-  BookDateFormat = 'January 2, 2006'
+  BookDateFormat = 'Agosto 18, 2022'
 
   # /!\ This is an experimental feature, might be removed or changed at any time
   # (Optional, experimental, default false) Enables portable links and link checks in markdown pages.
