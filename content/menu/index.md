@@ -3,12 +3,6 @@ headless: true
 ---
 
 - **Shortcodes**
-- [p5]({{< relref "/docs/shortcodes/p5" >}})
+- [Taller 1]({{< relref "/docs/shortcodes/Taller1" >}})
 - [Integrantes]({{< relref "/docs/shortcodes/integrantes" >}})
-- [Columns]({{< relref "/docs/shortcodes/columns" >}})
-- [Expand]({{< relref "/docs/shortcodes/expand" >}})
-- [Hints]({{< relref "/docs/shortcodes/hints" >}})
-- [Katex]({{< relref "/docs/shortcodes/katex" >}})
-- [Mermaid]({{< relref "/docs/shortcodes/mermaid" >}})
-- [Tabs]({{< relref "/docs/shortcodes/tabs" >}})
 <br />
