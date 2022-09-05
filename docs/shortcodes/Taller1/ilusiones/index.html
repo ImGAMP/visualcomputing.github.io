@@ -1,7 +1,283 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="#Ilusiones"><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="#Ilusiones"><meta property="og:type" content="article"><meta property="og:url" content="https://imgamp.github.io/visualcomputing.github.io/docs/shortcodes/Taller1/ilusiones/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-09-04T21:21:20-05:00"><title>Ilusiones | Visual Computing</title><link rel=manifest href=/visualcomputing.github.io/manifest.json><link rel=icon href=/visualcomputing.github.io/favicon.png type=image/x-icon><link rel=stylesheet href=/visualcomputing.github.io/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/visualcomputing.github.io/flexsearch.min.js></script>
-<script defer src=/visualcomputing.github.io/en.search.min.d1919b406007d382aee32f75d1378e33411cd1bdba6b7fa406169e26c6d637a8.js integrity="sha256-0ZGbQGAH04Ku4y910TeOM0Ec0b26a3+kBhaeJsbWN6g=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/visualcomputing.github.io/><span>Visual Computing</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Shortcodes</span><ul><li><a href=/visualcomputing.github.io/docs/shortcodes/buttons/>Buttons</a></li><li><a href=/visualcomputing.github.io/docs/shortcodes/integrantes/>Integrantes</a></li><li><input type=checkbox id=section-c04a898dd5a4aeb4a8e570b60dd467fe class=toggle checked>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="#Ilusiones
+##Ilusion 1
+Código en p5.js 1 let rad, x1, y1, aux = 1; function setup() { createCanvas(450, 450); frameRate(40); x = width/2,y = height/2; x1= x; y1= y; } function draw() { background(210); if((frameCount-1) % 125 == 0){ aux = -aux; } x1 = x1 + aux * 1.06; y1 = y1 + aux * 1.06; strokeWeight(2); stroke(20, 20, 150); /* radi = 12*pow((170/x1),5); if (radi < 50) rad = 50; if ( radi >= 50) rad = 12*pow((170/x1),5); */ rad = 12*pow((170/x1),5); fill(230, 240, 230); ellipse(x,y,rad); noStroke(); fill(215, 140, 220); ellipse(x,y,40); strokeWeight(4); stroke(230, 216, 232); point(x,y) } "><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="#Ilusiones
+##Ilusion 1
+Código en p5.js 1 let rad, x1, y1, aux = 1; function setup() { createCanvas(450, 450); frameRate(40); x = width/2,y = height/2; x1= x; y1= y; } function draw() { background(210); if((frameCount-1) % 125 == 0){ aux = -aux; } x1 = x1 + aux * 1.06; y1 = y1 + aux * 1.06; strokeWeight(2); stroke(20, 20, 150); /* radi = 12*pow((170/x1),5); if (radi < 50) rad = 50; if ( radi >= 50) rad = 12*pow((170/x1),5); */ rad = 12*pow((170/x1),5); fill(230, 240, 230); ellipse(x,y,rad); noStroke(); fill(215, 140, 220); ellipse(x,y,40); strokeWeight(4); stroke(230, 216, 232); point(x,y) } "><meta property="og:type" content="article"><meta property="og:url" content="https://imgamp.github.io/visualcomputing.github.io/docs/shortcodes/Taller1/ilusiones/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-09-04T22:05:22-05:00"><title>Ilusiones | Visual Computing</title><link rel=manifest href=/visualcomputing.github.io/manifest.json><link rel=icon href=/visualcomputing.github.io/favicon.png type=image/x-icon><link rel=stylesheet href=/visualcomputing.github.io/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/visualcomputing.github.io/flexsearch.min.js></script>
+<script defer src=/visualcomputing.github.io/en.search.min.98154623c26dceeecee2f4edbe2b22cc5cdc92f26977247205ad18e96e548d59.js integrity="sha256-mBVGI8Jtzu7O4vTtvisizFzckvJpdyRyBa0Y6W5UjVk=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/visualcomputing.github.io/><span>Visual Computing</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Shortcodes</span><ul><li><a href=/visualcomputing.github.io/docs/shortcodes/integrantes/>Integrantes</a></li><li><input type=checkbox id=section-c04a898dd5a4aeb4a8e570b60dd467fe class=toggle checked>
 <label for=section-c04a898dd5a4aeb4a8e570b60dd467fe class="flex justify-between"><a href=/visualcomputing.github.io/docs/shortcodes/Taller1/>Taller1</a></label><ul><li><a href=/visualcomputing.github.io/docs/shortcodes/Taller1/ilusiones/ class=active>Ilusiones</a></li></ul></li></ul></li></ul><ul><li><a href=/visualcomputing.github.io/posts/>Blog</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/visualcomputing.github.io/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Ilusiones</strong>
-<label for=toc-control><img src=/visualcomputing.github.io/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><p>#Ilusiones</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/ImGAMP/visualcomputing.showcase/commit/9f4c8cd29227fb4571849f3a6d96199c3c92ef2d title='Last modified by Gustavo Mojica | Agosto 98, 5055' target=_blank rel=noopener><img src=/visualcomputing.github.io/svg/calendar.svg class=book-icon alt=Calendar>
+<label for=toc-control><img src=/visualcomputing.github.io/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown><p>#Ilusiones</p><p>##Ilusion 1</p><details><summary>Código en p5.js 1</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>rad</span>, <span style=color:#a6e22e>x1</span>, <span style=color:#a6e22e>y1</span>, <span style=color:#a6e22e>aux</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>setup</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>createCanvas</span>(<span style=color:#ae81ff>450</span>, <span style=color:#ae81ff>450</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>frameRate</span>(<span style=color:#ae81ff>40</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>width</span><span style=color:#f92672>/</span><span style=color:#ae81ff>2</span>,<span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>height</span><span style=color:#f92672>/</span><span style=color:#ae81ff>2</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x1</span><span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>y1</span><span style=color:#f92672>=</span> <span style=color:#a6e22e>y</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>draw</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>background</span>(<span style=color:#ae81ff>210</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>((<span style=color:#a6e22e>frameCount</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) <span style=color:#f92672>%</span> <span style=color:#ae81ff>125</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>){
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>aux</span> <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#a6e22e>aux</span>;
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>x1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x1</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>aux</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1.06</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>y1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y1</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>aux</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1.06</span>;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>strokeWeight</span>(<span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stroke</span>(<span style=color:#ae81ff>20</span>, <span style=color:#ae81ff>20</span>, <span style=color:#ae81ff>150</span>);
+</span></span><span style=display:flex><span>  <span style=color:#75715e>/* 
+</span></span></span><span style=display:flex><span><span style=color:#75715e>  radi = 12*pow((170/x1),5);
+</span></span></span><span style=display:flex><span><span style=color:#75715e>  if (radi &lt; 50) rad = 50;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>  if ( radi &gt;= 50) rad = 12*pow((170/x1),5);
+</span></span></span><span style=display:flex><span><span style=color:#75715e>  */</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>rad</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>12</span><span style=color:#f92672>*</span><span style=color:#a6e22e>pow</span>((<span style=color:#ae81ff>170</span><span style=color:#f92672>/</span><span style=color:#a6e22e>x1</span>),<span style=color:#ae81ff>5</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fill</span>(<span style=color:#ae81ff>230</span>, <span style=color:#ae81ff>240</span>, <span style=color:#ae81ff>230</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ellipse</span>(<span style=color:#a6e22e>x</span>,<span style=color:#a6e22e>y</span>,<span style=color:#a6e22e>rad</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>noStroke</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fill</span>(<span style=color:#ae81ff>215</span>, <span style=color:#ae81ff>140</span>, <span style=color:#ae81ff>220</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>ellipse</span>(<span style=color:#a6e22e>x</span>,<span style=color:#a6e22e>y</span>,<span style=color:#ae81ff>40</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>strokeWeight</span>(<span style=color:#ae81ff>4</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>stroke</span>(<span style=color:#ae81ff>230</span>, <span style=color:#ae81ff>216</span>, <span style=color:#ae81ff>232</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>point</span>(<span style=color:#a6e22e>x</span>,<span style=color:#a6e22e>y</span>)
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><iframe id=changesize style=width:525px;height:525px srcdoc='
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.min.js></script>
+<pre><code>        <script>
+</code></pre>
+<p>let rad, x1, y1, aux = 1;</p>
+<p>function setup() {
+createCanvas(450, 450);
+frameRate(40);
+x = width/2,y = height/2;
+x1= x;
+y1= y;
+}</p>
+<p>function draw() {
+background(210);</p>
+<p>if((frameCount-1) % 125 == 0){
+aux = -aux;
+}</p>
+<p>x1 = x1 + aux * 1.06;
+y1 = y1 + aux * 1.06;</p>
+<p>strokeWeight(2);
+stroke(20, 20, 150);
+/*
+radi = 12<em>pow((170/x1),5);
+if (radi < 50) rad = 50;
+if ( radi >= 50) rad = 12</em>pow((170/x1),5);
+<em>/
+rad = 12</em>pow((170/x1),5);
+fill(230, 240, 230);
+ellipse(x,y,rad);</p>
+<p>noStroke();
+fill(215, 140, 220);
+ellipse(x,y,40);</p>
+<p>strokeWeight(4);
+stroke(230, 216, 232);
+point(x,y)
+}</p>
+<p>##Ilusion 2</p>
+<p><details ><summary>Código en p5.js</summary>
+<div class="markdown-inner">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">movement</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">stop</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">crater</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">fondo</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">255</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">createCanvas</span>(<span style="color:#ae81ff">510</span>, <span style="color:#ae81ff">510</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#a6e22e">fondo</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">frameRate</span>(<span style="color:#ae81ff">30</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">noStroke</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonStop</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createButton</span>(<span style="color:#e6db74">&amp;#39;Parar&amp;#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonStop</span>.<span style="color:#a6e22e">position</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">478</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonStop</span>.<span style="color:#a6e22e">mousePressed</span>(<span style="color:#a6e22e">stop_move</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color1</span> <span style="color:#f92672">=</span> (<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">192</span>,<span style="color:#ae81ff">203</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">color2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">color1</span><span style="color:#f92672">-</span><span style="color:#ae81ff">255</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonReset</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createButton</span>(<span style="color:#e6db74">&amp;#39;Resetear&amp;#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonReset</span>.<span style="color:#a6e22e">position</span>(<span style="color:#ae81ff">430</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonReset</span>.<span style="color:#a6e22e">mousePressed</span>(<span style="color:#a6e22e">reset</span>);
+</span></span><span style="display:flex;"><span><br>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonInvert</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createButton</span>(<span style="color:#e6db74">&amp;#39;Shallow&amp;#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonInvert</span>.<span style="color:#a6e22e">position</span>(<span style="color:#ae81ff">447</span>, <span style="color:#ae81ff">478</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonInvert</span>.<span style="color:#a6e22e">mousePressed</span>(<span style="color:#a6e22e">invert</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonInvert</span>.<span style="color:#a6e22e">style</span>(<span style="color:#e6db74">&amp;#39;background-color&amp;#39;</span>, <span style="color:#a6e22e">color</span>(<span style="color:#ae81ff">255</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">invert</span>() {<br>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">col</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">color1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">crater</span> <span style="color:#f92672"><em>=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">crater</span> <span style="color:#f92672">&amp;gt;</span> <span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">buttonInvert</span>.<span style="color:#a6e22e">style</span>(<span style="color:#e6db74">&amp;#39;background-color&amp;#39;</span>, <span style="color:#a6e22e">color</span>(<span style="color:#ae81ff">255</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">background</span>(<span style="color:#a6e22e">fondo</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color1</span> <span style="color:#f92672">=</span> (<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">192</span>,<span style="color:#ae81ff">203</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color2</span><span style="color:#f92672">=</span> <span style="color:#a6e22e">color1</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">255</span>
+</span></span><span style="display:flex;"><span>  }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">buttonInvert</span>.<span style="color:#a6e22e">style</span>(<span style="color:#e6db74">&amp;#39;background-color&amp;#39;</span>, <span style="color:#a6e22e">color</span>(<span style="color:#ae81ff">125</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">background</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></em></span><span style="color:#a6e22e">fondo</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">color2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">col</span>;
+</span></span><span style="display:flex;"><span> <br>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">reset</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#a6e22e">fondo</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">movement</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">stop</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">crater</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">buttonInvert</span>.<span style="color:#a6e22e">style</span>(<span style="color:#e6db74">&amp;#39;background-color&amp;#39;</span>, <span style="color:#a6e22e">color</span>(<span style="color:#ae81ff">255</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">stop_move</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">stop</span> <span style="color:#f92672"><em>=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">aux</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fill</span>(<span style="color:#a6e22e">color2</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ellipse</span>(<span style="color:#ae81ff">250</span>,<span style="color:#ae81ff">250</span>,<span style="color:#ae81ff">500</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&amp;lt;</span> <span style="color:#ae81ff">12</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">fill</span>(<span style="color:#a6e22e">color2</span>);
+</span></span><span style="display:flex;"><span>    }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">fill</span>(<span style="color:#a6e22e">color1</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">crater</span><span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>){
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">ellipse</span>(<span style="color:#ae81ff">250</span><span style="color:#f92672">+</span>(<span style="color:#a6e22e">cos</span>((<span style="color:#a6e22e">movement</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">360</span>)<span style="color:#f92672"></em></span><span style="color:#a6e22e">PI</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>)<span style="color:#f92672"><em></span><span style="color:#a6e22e">i</span><span style="color:#f92672"></em></span><span style="color:#ae81ff">20</span>),<span style="color:#ae81ff">250</span><span style="color:#f92672">+</span>(<span style="color:#a6e22e">sin</span>((<span style="color:#a6e22e">movement</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">360</span>)<span style="color:#f92672"><em></span><span style="color:#a6e22e">PI</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>)<span style="color:#f92672"></em></span><span style="color:#a6e22e">i</span><span style="color:#f92672"><em></span><span style="color:#ae81ff">20</span>),<span style="color:#ae81ff">500</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span><span style="color:#f92672"></em></span><span style="color:#ae81ff">40</span>);
+</span></span><span style="display:flex;"><span>    }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">&amp;lt;</span> <span style="color:#ae81ff">7</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ellipse</span>(<span style="color:#ae81ff">250</span><span style="color:#f92672">+</span>(<span style="color:#a6e22e">cos</span>((<span style="color:#a6e22e">movement</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">360</span>)<span style="color:#f92672"><em></span><span style="color:#a6e22e">PI</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>)<span style="color:#f92672"></em></span><span style="color:#a6e22e">i</span><span style="color:#f92672"><em></span><span style="color:#ae81ff">20</span>),<span style="color:#ae81ff">250</span><span style="color:#f92672">+</span>(<span style="color:#a6e22e">sin</span>((<span style="color:#a6e22e">movement</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">360</span>)<span style="color:#f92672"></em></span><span style="color:#a6e22e">PI</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>)<span style="color:#f92672"><em></span><span style="color:#a6e22e">i</span><span style="color:#f92672"></em></span><span style="color:#ae81ff">20</span>),<span style="color:#ae81ff">500</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span><span style="color:#f92672"><em></span><span style="color:#ae81ff">40</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">aux</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>      }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ellipse</span>(<span style="color:#ae81ff">250</span><span style="color:#f92672">+</span>(<span style="color:#a6e22e">cos</span>((<span style="color:#a6e22e">movement</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">360</span>)<span style="color:#f92672"></em></span><span style="color:#a6e22e">PI</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>)<span style="color:#f92672"><em></span><span style="color:#a6e22e">aux</span><span style="color:#f92672"></em></span><span style="color:#ae81ff">20</span>),<span style="color:#ae81ff">250</span><span style="color:#f92672">+</span>(<span style="color:#a6e22e">sin</span>((<span style="color:#a6e22e">movement</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">360</span>)<span style="color:#f92672"><em></span><span style="color:#a6e22e">PI</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>)<span style="color:#f92672"></em></span><span style="color:#a6e22e">aux</span><span style="color:#f92672"><em></span><span style="color:#ae81ff">20</span>),<span style="color:#ae81ff">500</span><span style="color:#f92672">-</span><span style="color:#a6e22e">i</span><span style="color:#f92672"></em></span><span style="color:#ae81ff">40</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">aux</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">stop</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">movement</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span><br>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><iframe
+id="shallow"
+style="width:525px; height:525px"
+srcdoc="
+<!DOCTYPE html>
+<html>
+<head>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.min.js></script>
+<pre><code>        &amp;lt;script&amp;gt;
+</code></pre>
+<p>let movement = 0, stop = 1, crater = 1; fondo= 255;
+function setup() {
+createCanvas(510, 510);
+background(fondo);
+frameRate(30);
+noStroke();
+buttonStop = createButton(&#39;Parar&#39;);
+buttonStop.position(0, 478);
+buttonStop.mousePressed(stop_move);
+color1 = (255,192,203);
+color2 = color1-255;
+buttonReset = createButton(&#39;Resetear&#39;);
+buttonReset.position(430, 0);
+buttonReset.mousePressed(reset);</p>
+<p>buttonInvert = createButton(&#39;Shallow&#39;);
+buttonInvert.position(447, 478);
+buttonInvert.mousePressed(invert);
+buttonInvert.style(&#39;background-color&#39;, color(255));
+}</p>
+<p>function invert() {<br>
+col = color1;
+crater <em>= -1;
+if(crater &amp;gt; 0){
+buttonInvert.style(&#39;background-color&#39;, color(255));
+background(fondo);
+color1 = (255,192,203);
+color2= color1 - 255
+}else{
+buttonInvert.style(&#39;background-color&#39;, color(125));
+background(-1</em>fondo);
+color1 = color2;
+color2 = col;</p>
+<p>}
+}</p>
+<p>function reset() {
+background(fondo);
+movement = 0;
+stop = 1;
+crater = 1;
+buttonInvert.style(&#39;background-color&#39;, color(255));
+}</p>
+<p>function stop_move() {
+stop *= -1;
+}</p>
+<p>function draw() {
+let aux = 2;
+fill(color2);
+ellipse(250,250,500);
+for (let i = 1; i &amp;lt; 12; i++) {
+if(i % 2 == 0){
+fill(color2);
+}else{
+fill(color1);
+}
+if(crater==1){
+ellipse(250+(cos((movement % 360)*PI/180)<em>i</em>20),250+(sin((movement % 360)<em>PI/180)<em>i</em>20),500-i</em>40);
+}else{
+if(i &amp;lt; 7){
+ellipse(250+(cos((movement % 360)*PI/180)<em>i</em>20),250+(sin((movement % 360)<em>PI/180)<em>i</em>20),500-i</em>40);
+aux = i - 1;
+}else{
+ellipse(250+(cos((movement % 360)*PI/180)<em>aux</em>20),250+(sin((movement % 360)<em>PI/180)<em>aux</em>20),500-i</em>40);
+aux -= 1;
+}
+}
+}
+if(stop == 1){
+movement += 1;
+}</p>
+<p>}</p>
+<p>##Ilusion 3</p>
+<p>##Ilusion 3</p>
+<pre><code>        &amp;lt;/script&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&amp;quot;
+</code></pre>
+<blockquote>
+</iframe>
+</blockquote></p>
+<p></div>
+</details></p>
+<pre><code>        </script>
+      </head>
+      <body>
+      </body>
+    </html>
+  "
+</code></pre>
+<blockquote>
+</iframe>
+</blockquote>
+
+  </div>
+</details>
+
+</article>
+ 
+      
+
+      <footer class=' book-footer"><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/ImGAMP/visualcomputing.showcase/commit/54af9778d51b7b57964721c17e2c3dc02d318569 title='Last modified by Gustavo Mojica | Agosto 98, 5055' target=_blank rel=noopener><img src=/visualcomputing.github.io/svg/calendar.svg class=book-icon alt=Calendar>
 <span>Agosto 98, 5055</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>
