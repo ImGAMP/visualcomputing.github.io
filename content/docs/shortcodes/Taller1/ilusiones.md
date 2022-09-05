@@ -1,8 +1,10 @@
-#Ilusiones
+# Ilusiones
 
-##Ilusion 1
+## Ilusion 1
 
-{{< details title="Código en p5.js 1" open=false >}}
+### Codigo
+
+{{< details title="Código en p5.js }" open=false >}}
 
 ```js
 let rad, x1, y1, aux = 1;
@@ -45,6 +47,9 @@ function draw() {
   point(x,y)
 }
 ```
+
+{{< /details >}}
+
 {{< p5-global-iframe id="changesize" width="525" height="525" >}}
 
 let rad, x1, y1, aux = 1;
@@ -86,9 +91,11 @@ function draw() {
   stroke(230, 216, 232);
   point(x,y)
 }
+{{< /p5-global-iframe >}}
 
+## Ilusion 2
 
-##Ilusion 2
+### Codigo
 
 {{< details title="Código en p5.js" open=false >}}
 ```js
@@ -171,6 +178,7 @@ function draw() {
 }
 
 ```
+{{< /details >}}
 
 {{< p5-global-iframe id="shallow" width="525" height="525" >}}
 
@@ -251,7 +259,8 @@ function draw() {
   }
   
 }
+{{< /p5-global-iframe >}}
 
-##Ilusion 3
+## Ilusion 3
 
-##Ilusion 3
+## Ilusion 4
