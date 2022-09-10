@@ -2,6 +2,11 @@
 
 ## Ilusion 1
 
+El tamaño si importa, cuando uno va a un restaurante y le sirven una cantidad en un plato pequeño, uno va asentirse más sacead, mientras que esa misma cantidad se va a ver más pequeña. Un efecto simiar a lo que sucede con la ilusión de Ebbinghaus. En la ilusión de Ebbinghaus, se ven dos anillos de discos azules uno con los discos grandes y otro con los discos pequeños, en el centro de ambos anillos hay dos discos naranjas que a pesar de que no lo parezcan tienen igual tamaño; la ilusión lleva el nombre de Hermann Ebbinghaus, un pionero en la investigación de la memoria.
+
+La conclusión extraída de los hallazgos y de un procedimiento de observación es que existe una propensión a que los fenómenos visuales se intensifiquen cuando el foco del observador se fija en la circunferencia interior contenida en el disco lila superior izquierdo. El argumento de que el cerebro tiene vías distintas para la visión perceptiva y la visión de acción ha estado muy influenciado por la ilusión de Ebbinghaus. Pues, se dice que la ilusión de Ebbinghaus afecta a la percepción del tamaño, pero no a la acción. 
+
+
 ### Codigo
 
 {{< details title="Código en p5.js }" open=false >}}
@@ -94,6 +99,10 @@ function draw() {
 {{< /p5-global-iframe >}}
 
 ## Ilusion 2
+
+El movimiento de rotación aumenta la percepción de la profundidad en patrones de anillos concéntricos en la profundidad estereocinética. La rotación suele dar la sensación de un túnel que se extiende o se contrae, o ambos.
+
+Se puede demostrar cómo el movimiento de rotación en los círculos crea la percepción de profundidad teniendo en cuenta los resultados de la codificación y la evidencia visual de la misma. 
 
 ### Codigo
 
