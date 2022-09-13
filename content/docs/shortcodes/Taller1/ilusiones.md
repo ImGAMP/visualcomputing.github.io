@@ -55,7 +55,7 @@ function draw() {
 
 {{< /details >}}
 
-{{< p5-global-iframe id="changesize" width="525" height="525" >}}
+{{< p5-global-iframe id="changesize" width="475" height="475" >}}
 
 let rad, x1, y1, aux = 1;
 

@@ -4,196 +4,163 @@
 
 Un kernel, matriz de convolución o máscara es una pequeña matriz que se utiliza en el procesamiento de imágenes para desenfocar, enfocar, resaltar, detectar bordes, etc. Para ello se utiliza la convolución entre el núcleo y una imagen. 
 
-La función gaussiana se utiliza para desenfocar una imagen y recibe su nombre del matemático y científico Carl Friedrich Gauss. Esta técnica se aplica con frecuencia para minimizar el ruido de la imagen y mejorar la claridad.
-En otro sentido, también se tienen en cuenta dos instrumentos que ayudan al crecimiento del ejercicio y permiten aumentar el potencial de la actividad. Las muestras dentro de una colección de datos que fueron elegidas por una razón específica fueron lo primero que miramos al analizar lo que se pensaba como una región ROI. Luego, en un esfuerzo por recrear el impacto de las lupas, se añadió el concepto de herramienta de zoom.
-El círculo interior y el círculo exterior representan cada uno un área ampliable, junto con el punto rojo que indica el punto del ratón.
-La cuestión es cómo parece en la imagen aplicar el color que coincide con la textura del círculo interior a cada uno de los puntos del círculo exterior. 
+Dado que es posible aplicar efectos como el desenfoque, la nitidez, el relieve, la detección de bordes, etc., mediante una operación de convolución entre el núcleo (matriz) y la imagen, el enmascaramiento es crucial en el ámbito del procesamiento de imágenes. En vista de ello, el objetivo de este estudio es evaluar el proceso de convolución de imágenes de forma que se haga un recorrido por cada una de las ideas que lo explican para obtener una perspectiva amplia.
 
 ### Codigo
 
-{{< details title="Código en p5.js }" open=false >}}
+{{< details title="Código en p5.js" open=false >}}
 
 ```js
-precision mediump float;
-
-varying vec2 vTexCoord;
-
-uniform sampler2D tex0;
-uniform sampler2D vid0;
-
-uniform vec2 texOffset;
-uniform float mask[9];
-
-uniform bool orig;
-uniform bool bord;
-uniform bool cam;
-uniform bool roi;
-uniform bool zoom;
-uniform float posY;
-uniform float posX;
-uniform float roiSize;
-
-float map2(float x, float in_min, float in_max, float out_min, float out_max) {
-  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
-
-void main() {
-  vec4 convolution;
-  vec4 texel;
+function convolution(x, y, matrix, matrixsize, img) {
+    let rtotal = 0.0;
+    let gtotal = 0.0;
+    let btotal = 0.0;
+    const offset = floor(matrixsize / 2);
+    for (let i = 0; i < matrixsize; i++){
+      for (let j = 0; j < matrixsize; j++){
+        
+        const xloc = (x + i - offset);
+        const yloc = (y + j - offset);
+        let loc = (xloc + img.width * yloc) * 4;
   
-  vec2 tc0 = vTexCoord + vec2(-texOffset.s, -texOffset.t);
-  vec2 tc1 = vTexCoord + vec2(         0.0, -texOffset.t);
-  vec2 tc2 = vTexCoord + vec2(+texOffset.s, -texOffset.t);
-  vec2 tc3 = vTexCoord + vec2(-texOffset.s,          0.0);
-  vec2 tc4 = vTexCoord + vec2(         0.0,          0.0);
-  vec2 tc5 = vTexCoord + vec2(+texOffset.s,          0.0);
-  vec2 tc6 = vTexCoord + vec2(-texOffset.s, +texOffset.t);
-  vec2 tc7 = vTexCoord + vec2(         0.0, +texOffset.t);
-  vec2 tc8 = vTexCoord + vec2(+texOffset.s, +texOffset.t);
-
-  vec4 rgba[9];
-  if(!cam){
-    rgba[0] = texture2D(tex0, vec2(tc0.x,1.0-tc0.y));
-    rgba[1] = texture2D(tex0, vec2(tc1.x,1.0-tc1.y));
-    rgba[2] = texture2D(tex0, vec2(tc2.x,1.0-tc2.y));
-    rgba[3] = texture2D(tex0, vec2(tc3.x,1.0-tc3.y));
-    rgba[4] = texture2D(tex0, vec2(tc4.x,1.0-tc4.y));
-    rgba[5] = texture2D(tex0, vec2(tc5.x,1.0-tc5.y));
-    rgba[6] = texture2D(tex0, vec2(tc6.x,1.0-tc6.y));
-    rgba[7] = texture2D(tex0, vec2(tc7.x,1.0-tc7.y));
-    rgba[8] = texture2D(tex0, vec2(tc8.x,1.0-tc8.y));
-    texel =  texture2D(tex0, vec2(vTexCoord.x,1.0-vTexCoord.y));
-  }else{
-    rgba[0] = texture2D(vid0, vec2(tc0.x,1.0-tc0.y));
-    rgba[1] = texture2D(vid0, vec2(tc1.x,1.0-tc1.y));
-    rgba[2] = texture2D(vid0, vec2(tc2.x,1.0-tc2.y));
-    rgba[3] = texture2D(vid0, vec2(tc3.x,1.0-tc3.y));
-    rgba[4] = texture2D(vid0, vec2(tc4.x,1.0-tc4.y));
-    rgba[5] = texture2D(vid0, vec2(tc5.x,1.0-tc5.y));
-    rgba[6] = texture2D(vid0, vec2(tc6.x,1.0-tc6.y));
-    rgba[7] = texture2D(vid0, vec2(tc7.x,1.0-tc7.y));
-    rgba[8] = texture2D(vid0, vec2(tc8.x,1.0-tc8.y));
-    texel =  texture2D(vid0, 1.0 - vec2(vTexCoord.x,1.0-vTexCoord.y));
-  }
-  for (int i = 0; i < 9; i++) {
-    convolution += rgba[i]*mask[i];
-  }
+        loc = constrain(loc, 0 , img.pixels.length - 1);
   
-  float pct = 0.0;
-  pct = distance(vTexCoord,vec2(posX,1.0-posY)); 
-  
-  if(roi){
-    if(pct<roiSize){
-      gl_FragColor = vec4(convolution.rgb, 1.0); 
-    }else{
-      gl_FragColor = vec4(texel.rgb, 1.0); 
+        rtotal += (img.pixels[loc]) * matrix[i][j];
+        gtotal += (img.pixels[loc + 1]) * matrix[i][j];
+        btotal += (img.pixels[loc + 2]) * matrix[i][j];
+      }
     }
-  }else if(zoom){
-    if(pct<roiSize){
-           
-      vec4 xd = texture2D(tex0, vec2(vTexCoord.x + ((vTexCoord.x - posX) / 3.0), 1.0 - vTexCoord.y + (vTexCoord.y - 1.0 + posY) / 3.0));
-
-      gl_FragColor = vec4(xd.rgb ,1.0);
-    }else{
-      gl_FragColor = vec4(texel.rgb, 1.0); 
-    }
-  }else{
-    gl_FragColor = vec4(convolution.rgb, 1.0); 
-  }
-}
+    rtotal = constrain(rtotal, 0, 255);
+    gtotal = constrain(gtotal, 0, 255);
+    btotal = constrain(btotal, 0, 255);
+    
+    return color(rtotal, gtotal, btotal);
+  };
 ```
 {{< /details >}}
 
-{{< p5-global-iframe id="changesize" width="525" height="525" >}}
+{{< p5-global-iframe id="changesize" width="660" height="920" >}}
 
-let Shader;
-let tex;
-let mask;
+let img, in1, in2, in3, in4, in5, in6, in7, in8, in9, button;
 
-function preload(){
-  Shader = loadShader('/showcase/sketches/maskingShader.vert', '/showcase/sketches/maskingShader.frag');
-  tex = loadImage('/showcase/sketches/mandrill.png');
-}
+  const matrix = [ [ 0.0625, 0.125, 0.0625 ],
+              [ 0.125, 0.25, 0.125 ],
+              [ 0.0625, 0.125, 0.0625 ] ]; 
 
-function setup() {
-  createCanvas(500, 500, WEBGL);
+  preload = function(){
+    img = loadImage('flowers2.jpg');
+  };
 
-  
-  inputImg = createFileInput(handleFile);
-  inputImg.position(255, 5);
-  inputImg.size(240);
-  
-  option = createSelect();
-  option.position(15, 5);
-  option.option('Original');
-  option.option('Detección de crestas');
-  option.option('Afilado');
-  option.option('Caja borrosa');
-  option.option('Desenfoque gaussiano');
-  option.selected('Original');
-  option.changed(optionEvent);
-  mask = option.value();
-  
-  media = createCheckbox('Cámara', false);
-  media.position(175, 5);
-  
-  roi = createCheckbox('Región de interes', false);
-  roi.position(15, 30);
-  
-  zoom = createCheckbox('Zoom', false);
-  zoom.position(170, 30);
-  
-  roiSize = createSlider(0.05,0.5,0.1,0.05);
-  roiSize.position(250, 30);
-  
-  vid = createCapture(VIDEO);
-  vid.size(500, 500);
-  vid.hide();
-  
-  
-}
+  setup = function () {
+    createCanvas(640, 900);
 
-function draw() {  
-  shader(Shader);
-  Shader.setUniform('tex0', tex);
-  Shader.setUniform('vid0', vid);
-  Shader.setUniform('cam', media.checked());
-  Shader.setUniform('roi', roi.checked());
-  Shader.setUniform('zoom', zoom.checked());
-  Shader.setUniform('roiSize', roiSize.value());
-  Shader.setUniform('posX', mouseX/500);
-  Shader.setUniform('posY', mouseY/500);
-  Shader.setUniform('texOffset', [1/500,1/500]);
-  if(mask=="Original"){
-    Shader.setUniform('mask', [0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0]);
-  }else if(mask=="Detección de crestas"){
-    Shader.setUniform('mask', [-1.0,-1.0,-1.0,-1.0,8.0,-1.0,-1.0,-1.0,-1.0]);
-  }else if(mask=="Afilado"){
-    Shader.setUniform('mask', [0.0, -1.0, 0.0, -1.0, 5.0, -1.0, 0.0, -1.0, 0.0]);
-  }else if(mask=="Caja borrosa"){
-    Shader.setUniform('mask', [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]);
-  }else if(mask=="Desenfoque gaussiano"){
-    Shader.setUniform('mask', [0.0625, 0.125, 0.0625, 0.125, 0.25, 0.125, 0.0625, 0.125, 0.0625]);
-  }
-  rect(0,0,width, height);
-}
+    in1 = createInput();
+    in2 = createInput();
+    in3 = createInput();
+    in4 = createInput();
+    in5 = createInput();
+    in6 = createInput();
+    in7 = createInput();
+    in8 = createInput();
+    in9 = createInput();
+    button = createButton('Apply');
+    button.mousePressed(kernel);
 
-function optionEvent() {
-  mask = option.value();
-}
+    img.loadPixels();
+    pixelDensity(1);
+    noLoop();
+  };
 
-function vidLoad() {
-  tex.loop();
-}
+  draw = function () {
+    background(230);
+    const matrixsize = 3;
 
-function handleFile(file) {
-  if (file.type === 'image') {
-    tex = createImg(file.data, '');
-    tex.hide();
-  } else {
-    tex = createVideo(file.data, vidLoad);
-    tex.hide();
-  }
-}
+    // Histogram
+    var maxRange = 256
+    var histogram = new Array(maxRange);
+    for (i = 0; i <= maxRange; i++) {
+      histogram[i] = 0
+    }
+
+    loadPixels();
+    for (let x = 0; x < img.width; x++) {
+      for (let y = 0; y < img.height; y++ ) {
+        let c = convolution(x, y, matrix, matrixsize, img);
+
+        let loc = (x + y*img.width) * 4;
+        let red = pixels[loc] = red(c);
+        let green = pixels[loc + 1] = green(c);
+        let blue = pixels[loc + 2] = blue(c);
+        let alpha = pixels[loc + 3] = alpha(c);
+        let luma = 0.299*red + 0.587*green + 0.114*blue // Convert to grey scale
+
+        b = int(luma);
+        histogram[b]++
+      }
+    }
+    updatePixels();
+
+    stroke(0,213,255)
+    push()
+    translate(10,0)
+    for (x = 0; x <= maxRange; x++) {
+      index = histogram[x];
+
+      y1=int(map(index, 0, max(histogram), height, height-200));
+      y2 = height
+      xPos = map(x,0,maxRange,0, width-20)
+      line(xPos, y1, xPos, y2);
+    }
+    pop()
+  };
+
+  function convolution(x, y, matrix, matrixsize, img) {
+    let rtotal = 0.0;
+    let gtotal = 0.0;
+    let btotal = 0.0;
+    const offset = floor(matrixsize / 2);
+    for (let i = 0; i < matrixsize; i++){
+      for (let j = 0; j < matrixsize; j++){
+        
+        const xloc = (x + i - offset);
+        const yloc = (y + j - offset);
+        let loc = (xloc + img.width * yloc) * 4;
+  
+        loc = constrain(loc, 0 , img.pixels.length - 1);
+  
+        rtotal += (img.pixels[loc]) * matrix[i][j];
+        gtotal += (img.pixels[loc + 1]) * matrix[i][j];
+        btotal += (img.pixels[loc + 2]) * matrix[i][j];
+      }
+    }
+    rtotal = constrain(rtotal, 0, 255);
+    gtotal = constrain(gtotal, 0, 255);
+    btotal = constrain(btotal, 0, 255);
+    
+    return color(rtotal, gtotal, btotal);
+  };
+
+  function kernel(){
+    matrix[0][0] = in1.value();
+    matrix[0][1] = in2.value();
+    matrix[0][2] = in3.value();
+    matrix[1][0] = in4.value();
+    matrix[1][1] = in5.value();
+    matrix[1][2] = in6.value();
+    matrix[2][0] = in7.value();
+    matrix[2][1] = in8.value();
+    matrix[2][2] = in9.value();
+
+    redraw();
+  };
 
 {{< /p5-global-iframe >}}
+
+{{< p5-div ver="1.4.2" sketch="/content/sketches/workshopEj1.js" >}}
+
+### Discusión
+
+El programa permite introducir los valores del núcleo y luego hacer clic en el botón Aplicar para aplicar la operación. Un ejercicio sencillo pero ilustrativo sería poner a cero todos los valores de la matriz, pero para aplicar un efecto de luminosidad variable, sería el del medio el que se podría variar, digamos, de 0 a 2 en pasos de 0 a 1, sólo el valor de Oscurece o agranda la imagen.
+
+
+Así, podemos ver que la convolución es una operación matemática utilizada en diversos campos de investigación (como el de las señales y las comunicaciones), y en el procesamiento de imágenes juega un papel importante en diversas implementaciones de aplicaciones de filtros, reconocimiento de caras, etc. .
