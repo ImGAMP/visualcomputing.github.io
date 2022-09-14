@@ -48,7 +48,7 @@ let img, in1, in2, in3, in4, in5, in6, in7, in8, in9, button;
               [ 0.0625, 0.125, 0.0625 ] ]; 
 
   preload = function(){
-    img = loadImage('flowers2.jpg');
+    img = loadImage('/visualcomputing.github.io/edit/gmojica/content/sketches/flowers2.jpg');
   };
 
   setup = function () {
