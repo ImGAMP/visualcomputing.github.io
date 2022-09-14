@@ -8,7 +8,7 @@ new p5((p) => {
               [ 0.0625, 0.125, 0.0625 ] ]; 
 
   p.preload = function(){
-    img = p.loadImage("flowers2.jpg");
+    img = p.loadImage("/visualcomputing.github.io/edit/gmojica/content/sketches/flowers2.jpg");
   };
 
   p.setup = function () {
