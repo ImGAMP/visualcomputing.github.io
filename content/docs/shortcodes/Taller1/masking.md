@@ -156,7 +156,7 @@ let img, in1, in2, in3, in4, in5, in6, in7, in8, in9, button;
 
 {{< /p5-global-iframe >}}
 
-{{< p5-div ver="1.4.2" sketch="/content/sketches/workshopEj1.js" >}}
+{{< p5-div ver="1.4.2" sketch="visualcomputing.github.io/content/sketches/workshopEj1.js" >}}
 
 ### Discusión
 
